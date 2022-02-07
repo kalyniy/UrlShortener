@@ -1,0 +1,27 @@
+{
+  "name": "shorturl",
+  "version": "1.0.0",
+  "description": "Url Shortener",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalyniy/UrlShortener.git"
+  },
+  "keywords": [
+    "url",
+    "shortener"
+  ],
+  "author": "Dan Kalyniy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kalyniy/UrlShortener/issues"
+  },
+  "homepage": "https://github.com/kalyniy/UrlShortener#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  }
+}
