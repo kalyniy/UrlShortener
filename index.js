@@ -1,14 +1,28 @@
 const express = require('express')
 const cors = require('cors')
+const bodyParser = require('body-parser')
 const shortener = require('./shortener')
 const port = 8000
 const app = express()
-
 app.use(cors())
-app.use(express.json())
+//app.use(express.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
 
-app.get('/', (req, res) => {
-  res.send('Home')
+app.post('/shorten', (req, res) => {
+  let url = req.body.url
+  if (shortener.isValidHttpUrl(url)) {
+    res.send('lol')
+  } else {
+    res.send('wrong http')
+  }
+})
+
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html')
 })
 app.get('/:id', (req, res) => {
   let id = req.params.id

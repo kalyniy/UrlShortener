@@ -16,4 +16,4 @@ function generateUrl() {}
 function getUrl() {
   return 'http://bitswitch.tech'
 }
-module.exports = { generateUrl, getUrl }
+module.exports = { generateUrl, getUrl, isValidHttpUrl }
