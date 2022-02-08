@@ -13,9 +13,11 @@ app.use(
 )
 
 app.post('/shorten', (req, res) => {
-  let url = req.body.url
-  if (shortener.isValidHttpUrl(url)) {
-    res.send('lol')
+  let input = req.body.url
+  if (shortener.isValidHttpUrl(input)) {
+    const code = shortener.generateCode(5)
+    const url = shortener.generateUrl(code)
+    res.send(`${code} -> ${url}`)
   } else {
     res.send('wrong http')
   }
